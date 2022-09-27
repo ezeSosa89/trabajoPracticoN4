@@ -9,7 +9,7 @@ package com.mycompany.trabajopracticon4;
  *
  * @author ezequ
  */
-public class TrabajoPracticoN4 {
+public class Colegio {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
