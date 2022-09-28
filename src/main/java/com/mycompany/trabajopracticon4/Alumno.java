@@ -49,16 +49,25 @@ public class Alumno {
     }
 
     public void agregarMateria(Materia m){
-        if(materia.contains(m)){
+       materia.add(m);
+        /*if(materia.contains(m)){
             System.out.println("Ya esta inscripto en esta materia");
         }else{
             materia.add(m);
             System.out.println("La materia fue agregada con exito");
-        }
+        }*/
     }
     
     public int cantidadMaterias(){
         return materia.size();
+    }
+
+    public HashSet<Materia> getMateria() {
+        return materia;
+    }
+
+    public void setMateria(HashSet<Materia> materia) {
+        this.materia = materia;
     }
 
     @Override
