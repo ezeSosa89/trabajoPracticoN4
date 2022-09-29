@@ -91,8 +91,13 @@ public class Alumno {
         final Alumno other = (Alumno) obj;
         return this.legajo == other.legajo;
     }
+
+    @Override
+    public String toString() {
+        return this.apellido+"  "+this.nombre;
+    }
     
-    
+      
     
     
 }
