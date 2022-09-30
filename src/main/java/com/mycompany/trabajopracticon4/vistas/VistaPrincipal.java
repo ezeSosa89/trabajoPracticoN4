@@ -7,7 +7,6 @@ package com.mycompany.trabajopracticon4.vistas;
 import com.mycompany.trabajopracticon4.Materia;
 import com.mycompany.trabajopracticon4.Alumno;
 import java.util.HashSet;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,11 +14,17 @@ import javax.swing.JOptionPane;
  */
 public class VistaPrincipal extends javax.swing.JFrame {
 
-    Alumno alumno;
+  //  private JDesktopPane escritorio;
+    
+    
+    
     private HashSet<Alumno> alumnos = new HashSet<>();
+  private HashSet<Materia> materias = new HashSet<>();
+  
+  
+   
 
-    Materia materia;
-    private HashSet<Materia> materias = new HashSet<>();
+    
 
     /*
 HashSet<Alumno>alumnos=new HashSet();
@@ -31,8 +36,8 @@ HashSet<Materia>materias=new HashSet();
      */
     public VistaPrincipal() {
         initComponents();
-        JCBinscribirAlumno.removeAllItems();
-        JCBinscribirMateria.removeAllItems();
+    //    JCBinscribirAlumno.removeAllItems();
+    //    JCBinscribirMateria.removeAllItems();
 
     }
 
@@ -47,40 +52,15 @@ HashSet<Materia>materias=new HashSet();
 
         jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        JLidMateria = new javax.swing.JLabel();
-        JLnombreMateria = new javax.swing.JLabel();
-        JLanio = new javax.swing.JLabel();
-        JTFIdMateria = new javax.swing.JTextField();
-        JTFNombreMateria = new javax.swing.JTextField();
-        JTFAnio = new javax.swing.JTextField();
-        BTNguardarMateria = new javax.swing.JButton();
-        BTNlimpiarMateria = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
-        jPanel3 = new javax.swing.JPanel();
-        JLlegajo = new javax.swing.JLabel();
-        JLapellido = new javax.swing.JLabel();
-        JLnombre = new javax.swing.JLabel();
-        JTFlegajo = new javax.swing.JTextField();
-        JTFapellido = new javax.swing.JTextField();
-        JTFnombre = new javax.swing.JTextField();
-        BTNguardarAlumno = new javax.swing.JButton();
-        BTNlimpiarAlumno = new javax.swing.JButton();
-        jSeparator2 = new javax.swing.JSeparator();
-        jPanel4 = new javax.swing.JPanel();
-        jElijaunaMateria = new javax.swing.JLabel();
-        jElijaUnAlumno = new javax.swing.JLabel();
-        BTNInscribir = new javax.swing.JButton();
-        JCBinscribirMateria = new javax.swing.JComboBox<>();
-        JCBinscribirAlumno = new javax.swing.JComboBox<>();
-        jPanel6 = new javax.swing.JPanel();
-        jElijaUnAlumno1 = new javax.swing.JLabel();
-        BTNverAlumno = new javax.swing.JButton();
-        JCBverAlumno = new javax.swing.JComboBox<>();
-        jPanel7 = new javax.swing.JPanel();
-        jElijaUnAlumno2 = new javax.swing.JLabel();
-        BTNverMateria = new javax.swing.JButton();
-        JCBverMateria = new javax.swing.JComboBox<>();
+        JDPpantallaprincipal = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -108,627 +88,155 @@ HashSet<Materia>materias=new HashSet();
         setTitle("Trabajo practico N 4");
         setResizable(false);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Agregar Materia", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Comic Sans MS", 0, 24))); // NOI18N
-
-        JLidMateria.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        JLidMateria.setText("Id Materia");
-
-        JLnombreMateria.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        JLnombreMateria.setText("Nombre de la materia");
-
-        JLanio.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        JLanio.setText("Año");
-
-        JTFIdMateria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFIdMateriaActionPerformed(evt);
-            }
-        });
-
-        JTFNombreMateria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFNombreMateriaActionPerformed(evt);
-            }
-        });
-
-        JTFAnio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFAnioActionPerformed(evt);
-            }
-        });
-
-        BTNguardarMateria.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        BTNguardarMateria.setText("Guardar");
-        BTNguardarMateria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTNguardarMateriaActionPerformed(evt);
-            }
-        });
-
-        BTNlimpiarMateria.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        BTNlimpiarMateria.setText("Limpiar");
-        BTNlimpiarMateria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTNlimpiarMateriaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(BTNguardarMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79)
-                        .addComponent(BTNlimpiarMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSeparator1)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JLnombreMateria)
-                                    .addComponent(JLidMateria)
-                                    .addComponent(JLanio))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(33, 33, 33)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(JTFIdMateria, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                                            .addComponent(JTFNombreMateria, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(JTFAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(16, Short.MAX_VALUE))
+        javax.swing.GroupLayout JDPpantallaprincipalLayout = new javax.swing.GroupLayout(JDPpantallaprincipal);
+        JDPpantallaprincipal.setLayout(JDPpantallaprincipalLayout);
+        JDPpantallaprincipalLayout.setHorizontalGroup(
+            JDPpantallaprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 483, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTFIdMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JLidMateria))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTFNombreMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JLnombreMateria))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTFAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JLanio, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BTNguardarMateria, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(BTNlimpiarMateria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(7, 7, 7))
+        JDPpantallaprincipalLayout.setVerticalGroup(
+            JDPpantallaprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Agregar alumno", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Comic Sans MS", 0, 24))); // NOI18N
+        jMenu1.setText("Cargar");
 
-        JLlegajo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        JLlegajo.setText("Legajo");
-
-        JLapellido.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        JLapellido.setText("Apellido");
-
-        JLnombre.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        JLnombre.setText("Nombre");
-
-        BTNguardarAlumno.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        BTNguardarAlumno.setText("Guardar");
-        BTNguardarAlumno.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem1.setText("Cargar alumno");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTNguardarAlumnoActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
+        jMenu1.add(jMenuItem1);
 
-        BTNlimpiarAlumno.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        BTNlimpiarAlumno.setText("Limpiar");
-        BTNlimpiarAlumno.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem2.setText("Cargar materia");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTNlimpiarAlumnoActionPerformed(evt);
+                jMenuItem2ActionPerformed(evt);
             }
         });
+        jMenu1.add(jMenuItem2);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(BTNguardarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BTNlimpiarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JLlegajo)
-                            .addComponent(JLapellido)
-                            .addComponent(JLnombre))
-                        .addGap(81, 81, 81)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTFlegajo, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JTFapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JTFnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTFlegajo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JLlegajo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JLapellido)
-                    .addComponent(JTFapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTFnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JLnombre))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BTNguardarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BTNlimpiarAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
+        jMenuBar1.add(jMenu1);
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Inscripcion a materias", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Comic Sans MS", 0, 18))); // NOI18N
+        jMenu2.setText("Gestion");
 
-        jElijaunaMateria.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jElijaunaMateria.setText("Elija una Materia");
-
-        jElijaUnAlumno.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jElijaUnAlumno.setText("Elija un Alumno");
-
-        BTNInscribir.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        BTNInscribir.setText("Inscribir");
-        BTNInscribir.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem3.setText("Inscripcion");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTNInscribirActionPerformed(evt);
+                jMenuItem3ActionPerformed(evt);
             }
         });
+        jMenu2.add(jMenuItem3);
 
-        JCBinscribirMateria.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                JCBinscribirMateriaComponentAdded(evt);
-            }
-        });
-        JCBinscribirMateria.addActionListener(new java.awt.event.ActionListener() {
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Informacion");
+
+        jMenuItem4.setText("Informacion");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCBinscribirMateriaActionPerformed(evt);
+                jMenuItem4ActionPerformed(evt);
             }
         });
+        jMenu3.add(jMenuItem4);
 
-        JCBinscribirAlumno.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                JCBinscribirAlumnoComponentAdded(evt);
-            }
-        });
-        JCBinscribirAlumno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCBinscribirAlumnoActionPerformed(evt);
-            }
-        });
+        jMenuBar1.add(jMenu3);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jElijaUnAlumno)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(JCBinscribirAlumno, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jElijaunaMateria)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JCBinscribirMateria, 0, 140, Short.MAX_VALUE))))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(BTNInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 14, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jElijaunaMateria)
-                    .addComponent(JCBinscribirMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jElijaUnAlumno)
-                    .addComponent(JCBinscribirAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addComponent(BTNInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
-        );
-
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Informacion de alumnos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Comic Sans MS", 0, 18))); // NOI18N
-
-        jElijaUnAlumno1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jElijaUnAlumno1.setText("Elija un Alumno");
-
-        BTNverAlumno.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        BTNverAlumno.setText("ver");
-        BTNverAlumno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTNverAlumnoActionPerformed(evt);
-            }
-        });
-
-        JCBverAlumno.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                JCBverAlumnoComponentAdded(evt);
-            }
-        });
-        JCBverAlumno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCBverAlumnoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jElijaUnAlumno1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JCBverAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(BTNverAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 44, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jElijaUnAlumno1)
-                .addGap(36, 36, 36)
-                .addComponent(JCBverAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BTNverAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
-        );
-
-        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Informacion de materias", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Comic Sans MS", 0, 18))); // NOI18N
-
-        jElijaUnAlumno2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jElijaUnAlumno2.setText("Elija una materia");
-
-        BTNverMateria.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        BTNverMateria.setText("ver");
-        BTNverMateria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTNverMateriaActionPerformed(evt);
-            }
-        });
-
-        JCBverMateria.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                JCBverMateriaComponentAdded(evt);
-            }
-        });
-        JCBverMateria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCBverMateriaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jElijaUnAlumno2))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(JCBverMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(BTNverMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(112, 112, 112))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jElijaUnAlumno2)
-                .addGap(33, 33, 33)
-                .addComponent(JCBverMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BTNverMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
-        );
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(JDPpantallaprincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(JDPpantallaprincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-
-        jPanel4.getAccessibleContext().setAccessibleParent(JTFNombreMateria);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BTNguardarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNguardarAlumnoActionPerformed
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-
-        /* CASOS DE EXCEPCION :
-        EL LEGAJO ESTA VACIO : NumberFormatException  
-        ------------------
-        
-         */
-        try {
-            alumno = new Alumno(Integer.parseInt(JTFlegajo.getText()), JTFapellido.getText(), JTFnombre.getText());
-
-            if (alumnos.contains(alumno)) {  // SEGUN PARECE CONTAINS USA EQUIAL Y HASHCODE QUE ESTAN OVERIDE
-                JOptionPane.showMessageDialog(null, "El legajo ya existe");
-
-            } else {
-
-                if (JTFapellido.getText().equals("") || JTFnombre.getText().equals("")) {
-
-                    JOptionPane.showMessageDialog(null, "No esta permitido dejar campos en blanco");
-                } else {
-
-                    alumnos.add(alumno);
-                    JCBinscribirAlumno.addItem(alumno);
-                    JOptionPane.showMessageDialog(null, "Se agrego el alumno al sistema");
-
-                    JCBverAlumno.addItem(alumno);
-                }
-
-            }
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "No esta permitido dejar campos en blanco");
-        }
-
       
-
-    }//GEN-LAST:event_BTNguardarAlumnoActionPerformed
-
-    private void BTNlimpiarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNlimpiarAlumnoActionPerformed
-        // TODO add your handling code here:
-        JTFlegajo.setText("");
-        JTFapellido.setText("");
-        JTFnombre.setText("");
-
-
-    }//GEN-LAST:event_BTNlimpiarAlumnoActionPerformed
-
-    private void BTNInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNInscribirActionPerformed
-        // TODO add your handling code here:
-
-        //  JTFELijaUnaMateria.getSelectedItem();  no se que hace 
-        //  System.out.println(JTFELijaUnaMateria.getItemAt(0)); muetra el objeto de un indice particular       
-        //   System.out.println(JTFELijaUnaMateria.getSelectedIndex());  indice del elemento seleccionado dentro del JComboBox
-        /* CASOS DE EXCEPCION :
-        COMBOBOX MATERIA VACIO Y COMBOBOX ALUMNO NO VACIO : NullPointerException  
-        COMBOBOX MATERIA VACIO Y COMBOBOX ALUMNO VACIO : NullPointerException  
-        COMBOBOX MATERIA NO VACIO Y COMBOBOX ALUMNO VACIO : NullPointerException  
-        EN DEFINITIVA SI ALGUN COMBOBOX DE INSCRIPCION ESTA VACIO 
-        ------------------
-        COMPORTAMIENTO NO ESPERADO :( :
+        JDPpantallaprincipal.removeAll();
         
-        SE ESTA PERMITIENDO AGREGAR ALUMNOS CON LEGAJO VALIDO PERO CON NOMBRE Y APELLIDO VACION <== REVISAR
+        JDPpantallaprincipal.repaint();
         
-         */
-        try {
-            if (JCBinscribirAlumno.getItemAt(JCBinscribirAlumno.getSelectedIndex()).getMateria().contains(JCBinscribirMateria.getItemAt(JCBinscribirMateria.getSelectedIndex()))) {
-
-                JOptionPane.showMessageDialog(null, "Este alumno ya esta registrado en esa materia");
-            } else {
-
-                if (JCBinscribirMateria.getItemAt(JCBinscribirMateria.getSelectedIndex()) == null) {
-                    JOptionPane.showMessageDialog(null, "Verifique de seleccionar una materia \nNo esta permitido dejar campos en blanco");
-                } else {
-                    JCBinscribirAlumno.getItemAt(JCBinscribirAlumno.getSelectedIndex()).agregarMateria(JCBinscribirMateria.getItemAt(JCBinscribirMateria.getSelectedIndex()));
-
-                    JOptionPane.showMessageDialog(null, JCBinscribirAlumno.getItemAt(JCBinscribirAlumno.getSelectedIndex()).toString()
-                                                        + "  Se a inscripto con exito a la materia  : "
-                                                        + JCBinscribirMateria.getItemAt(JCBinscribirMateria.getSelectedIndex()));
-
-                    // JTFElijaUnAlumno.getItemAt(JTFElijaUnAlumno.getSelectedIndex()).getMateria());
-                }
-
-            }
-
-        } catch (NullPointerException e) {
-
-            JOptionPane.showMessageDialog(null, "Verifique de seleccionar un alumno \nNo esta permitido dejar campos en blanco");
-        }
-
-        // System.out.println(JTFElijaUnAlumno.getItemAt(JTFElijaUnAlumno.getSelectedIndex()));
-
-    }//GEN-LAST:event_BTNInscribirActionPerformed
-
-    private void JCBinscribirMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBinscribirMateriaActionPerformed
-        // TODO add your handling code here:
-
-
-    }//GEN-LAST:event_JCBinscribirMateriaActionPerformed
-
-    private void JCBinscribirAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBinscribirAlumnoActionPerformed
-        // TODO add your handling code here:
-
-
-    }//GEN-LAST:event_JCBinscribirAlumnoActionPerformed
-
-    private void JCBinscribirMateriaComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_JCBinscribirMateriaComponentAdded
-        // TODO add your handling code here:
-
-
-    }//GEN-LAST:event_JCBinscribirMateriaComponentAdded
-
-    private void JCBinscribirAlumnoComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_JCBinscribirAlumnoComponentAdded
-        // TODO add your handling code here:
-
-
-    }//GEN-LAST:event_JCBinscribirAlumnoComponentAdded
-
-    private void BTNlimpiarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNlimpiarMateriaActionPerformed
-        // TODO add your handling code here:
-
-        JTFIdMateria.setText("");
-        JTFNombreMateria.setText("");
-        JTFAnio.setText("");
-    }//GEN-LAST:event_BTNlimpiarMateriaActionPerformed
-
-    private void BTNguardarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNguardarMateriaActionPerformed
-        // TODO add your handling code here:
-
-        /* CASOS DE EXCEPCION :
-        EL ID MATERIA Y/O AÑO ESTAN VACIO : NumberFormatException  
-        ------------------
-        COMPORTAMIENTO NO ESPERADO :( :
+        AgregarAlumno ventanaAgregarAlumno = new AgregarAlumno(alumnos);
+        
+         ventanaAgregarAlumno.setVisible(true);
+        
+        JDPpantallaprincipal.add(ventanaAgregarAlumno);
+        
+        JDPpantallaprincipal.moveToFront(ventanaAgregarAlumno);
+        
        
-        SE ESTA PERMITIENDO AGREGAR MATERIA CON IDMATERIA Y/O AÑO VALIDO Y NOMBRE DE MATERIA VACIO  <== REVISAR
+   
+  
+       
         
-         */
-        try {
-            materia = new Materia(Integer.parseInt(JTFIdMateria.getText()), JTFNombreMateria.getText(), Integer.parseInt(JTFAnio.getText()));
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-            if (materias.contains(materia)) {  // SEGUN PARECE CONTAINS USA EQUIAL Y HASHCODE QUE ESTAN OVERIDE PARA COMPROBAR SI EST CONTENIDO
-                JOptionPane.showMessageDialog(null, "una materia con el mismo ID ya esta registrada");
-            } else {
-
-                if (JTFNombreMateria.getText().equals("")) {
-
-                    JOptionPane.showMessageDialog(null, "No esta permitido dejar campos en blanco");
-                } else {
-                    materias.add(materia);
-                    JOptionPane.showMessageDialog(null, "Se agrego la materia al sistema");
-
-                    JCBinscribirMateria.addItem(materia);   
-
-                    JCBverMateria.addItem(materia);
-                }
-
-            }
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "No esta permitido dejar campos en blanco");
-        }
-
-
-    }//GEN-LAST:event_BTNguardarMateriaActionPerformed
-
-    private void JTFNombreMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFNombreMateriaActionPerformed
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JTFNombreMateriaActionPerformed
+        
+        JDPpantallaprincipal.removeAll();
+        
+        JDPpantallaprincipal.repaint();
+        
+        AgregarMateria ventanaAgregarMateria = new AgregarMateria(materias);
+        
+         ventanaAgregarMateria.setVisible(true);
+        
+        JDPpantallaprincipal.add(ventanaAgregarMateria);
+        
+        JDPpantallaprincipal.moveToFront(ventanaAgregarMateria);
+        
+        
+        
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void JTFIdMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFIdMateriaActionPerformed
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JTFIdMateriaActionPerformed
+        
+         JDPpantallaprincipal.removeAll();
+        
+        JDPpantallaprincipal.repaint();
+        
+        Informacion ventanainfoInformacion = new Informacion(alumnos,materias);
+        
+         ventanainfoInformacion.setVisible(true);
+        
+        JDPpantallaprincipal.add(ventanainfoInformacion);
+        
+        JDPpantallaprincipal.moveToFront(ventanainfoInformacion);
+        
+        
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-    private void BTNverAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNverAlumnoActionPerformed
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-
-        try {
-
-            JOptionPane.showMessageDialog(null, "Apellido y nombre : " + JCBverAlumno.getItemAt(JCBverAlumno.getSelectedIndex()).toString()
-                    + "\nNumero de legajo : " + JCBverAlumno.getItemAt(JCBverAlumno.getSelectedIndex()).getLegajo()
-                    + "\nCantidad de materias a las que esta inscripto : " + JCBverAlumno.getItemAt(JCBverAlumno.getSelectedIndex()).cantidadMaterias()
-                    + "\nMaterias a la/s que esta inscripta/o : \n" + JCBverAlumno.getItemAt(JCBverAlumno.getSelectedIndex()).getMateria());
-
-        } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "verifique de seleccionar un alumno");
-
-        }
-
-
-    }//GEN-LAST:event_BTNverAlumnoActionPerformed
-
-    private void JCBverAlumnoComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_JCBverAlumnoComponentAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JCBverAlumnoComponentAdded
-
-    private void JCBverAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBverAlumnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JCBverAlumnoActionPerformed
-
-    private void BTNverMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNverMateriaActionPerformed
-        // TODO add your handling code here:
-
-        try {
-            JOptionPane.showMessageDialog(null, "Nombre  :  " + JCBverMateria.getItemAt(JCBverMateria.getSelectedIndex()).getNombre()+
-                                                "\nID  : "    + JCBverMateria.getItemAt(JCBverMateria.getSelectedIndex()).getIdMateria()+
-                                                "\nAño : "    + JCBverMateria.getItemAt(JCBverMateria.getSelectedIndex()).getAnio());
-        } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "verifique de seleccionar una materia");
-
-        }
-
-
-    }//GEN-LAST:event_BTNverMateriaActionPerformed
-
-    private void JCBverMateriaComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_JCBverMateriaComponentAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JCBverMateriaComponentAdded
-
-    private void JCBverMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBverMateriaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JCBverMateriaActionPerformed
-
-    private void JTFAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFAnioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFAnioActionPerformed
+         JDPpantallaprincipal.removeAll();
+        
+        JDPpantallaprincipal.repaint();
+        
+        InscripcionAMateria venInscripcionAMateria = new InscripcionAMateria(alumnos,materias);
+        
+         venInscripcionAMateria.setVisible(true);
+        
+        JDPpantallaprincipal.add(venInscripcionAMateria);
+        
+        JDPpantallaprincipal.moveToFront(venInscripcionAMateria);
+        
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -766,41 +274,16 @@ HashSet<Materia>materias=new HashSet();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BTNInscribir;
-    private javax.swing.JButton BTNguardarAlumno;
-    private javax.swing.JButton BTNguardarMateria;
-    private javax.swing.JButton BTNlimpiarAlumno;
-    private javax.swing.JButton BTNlimpiarMateria;
-    private javax.swing.JButton BTNverAlumno;
-    private javax.swing.JButton BTNverMateria;
-    private javax.swing.JComboBox<Alumno> JCBinscribirAlumno;
-    private javax.swing.JComboBox<Materia> JCBinscribirMateria;
-    private javax.swing.JComboBox<Alumno> JCBverAlumno;
-    private javax.swing.JComboBox<Materia> JCBverMateria;
-    private javax.swing.JLabel JLanio;
-    private javax.swing.JLabel JLapellido;
-    private javax.swing.JLabel JLidMateria;
-    private javax.swing.JLabel JLlegajo;
-    private javax.swing.JLabel JLnombre;
-    private javax.swing.JLabel JLnombreMateria;
-    private javax.swing.JTextField JTFAnio;
-    private javax.swing.JTextField JTFIdMateria;
-    private javax.swing.JTextField JTFNombreMateria;
-    private javax.swing.JTextField JTFapellido;
-    private javax.swing.JTextField JTFlegajo;
-    private javax.swing.JTextField JTFnombre;
-    private javax.swing.JLabel jElijaUnAlumno;
-    private javax.swing.JLabel jElijaUnAlumno1;
-    private javax.swing.JLabel jElijaUnAlumno2;
-    private javax.swing.JLabel jElijaunaMateria;
+    private javax.swing.JDesktopPane JDPpantallaprincipal;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }

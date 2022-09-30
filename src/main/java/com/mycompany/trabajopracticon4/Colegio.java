@@ -20,7 +20,7 @@ public class Colegio {
         a1.agregarMateria(matematicas);
         a1.agregarMateria(laboratorio);
         
-        a2.agregarMateria(ingles);
+        a2.agregarMateria(ingles);        
         a2.agregarMateria(matematicas);
         a2.agregarMateria(laboratorio);
         
