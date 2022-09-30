@@ -216,7 +216,7 @@ public class AgregarAlumno extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_BTNlimpiarAlumnoActionPerformed
 
     private void BTNsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNsalirActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
         
         
     }//GEN-LAST:event_BTNsalirActionPerformed
