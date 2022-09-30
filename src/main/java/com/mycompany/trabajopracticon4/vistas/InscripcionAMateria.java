@@ -172,7 +172,7 @@ public class InscripcionAMateria extends javax.swing.JInternalFrame {
 
                         JOptionPane.showMessageDialog(null,((Alumno)JCBinscribirAlumno.getSelectedItem()).toString()
                             + "  Se a inscripto con exito a la materia  : "
-                            + ((Alumno)JCBinscribirAlumno.getSelectedItem()));
+                            + (Materia)JCBinscribirMateria.getSelectedItem());
 
                         // JTFElijaUnAlumno.getItemAt(JTFElijaUnAlumno.getSelectedIndex()).getMateria());
                 }
